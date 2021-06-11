@@ -9,9 +9,9 @@ app.post('/payment/ipn', (req, res) => {
 
     fetch('https://api.manage-invite.xyz/paypal/ipn', {
         method: 'POST',
-	headers: {
-		'Content-Type': 'application/json'
-	},
+        headers: {
+                'Content-Type': 'application/json'
+        },
         body: JSON.stringify(req.body)
     }).then((response) => {
         res.sendStatus(response.status);
