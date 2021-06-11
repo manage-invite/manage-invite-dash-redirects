@@ -9,7 +9,9 @@ app.post('/payment/ipn', (req, res) => {
         method: 'POST',
         body: req.body
     }).then((response) => {
-        console.log(response);
+        res.sendStatus(response.status);
+    }).catch(() => {
+        res.sendStatus(500);
     });
 
 });
